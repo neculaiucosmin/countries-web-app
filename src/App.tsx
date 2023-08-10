@@ -4,7 +4,7 @@ import Search from "./components/Search.tsx";
 import Filter from "./components/Filter.tsx";
 import data from "../data.json"
 import CountryTable from "./components/CountryTable.tsx";
-import {useState} from "react";
+import { useState} from "react";
 import {Country} from "./interfaces/country.ts";
 
 const mappedCountry: Country[] = data.map(e => ({
@@ -21,12 +21,12 @@ const mappedCountry: Country[] = data.map(e => ({
 }));
 
 function App() {
-    const [region, setRegion] = useState(mappedCountry)
-    const [countries, setCountries] = useState(region.slice(0, 5))
 
-    // useEffect(() => {
-    //     setCountries(region)
-    // }, [region]);
+
+    const [region, setRegion] = useState(mappedCountry)
+    const [countries, setCountries] = useState(region.slice(0, 15))
+
+    const [appTheme, setAppTheme] = useState(false)
 
     const handleSearch = (countryName: string) => {
         if (countryName.length > 0) {
@@ -46,23 +46,17 @@ function App() {
             return
         } else {
             const regionToLowerCase = reg.toLowerCase();
-            console.log(reg)
             setRegion(() => mappedCountry.filter(country => country.region.toLowerCase() === regionToLowerCase))
-            const i = mappedCountry.filter(region => region.region.toLowerCase() === regionToLowerCase)
-            console.log(i)
-            console.log(region.length)
         }
-
-
     }
 
     return (
         <>
-            <div className={"font bg-light-gray-lm min-h-screen"}>
-                <Header/>
-                <Search handleSearch={handleSearch}/>
-                <Filter handleFilter={handleFilter}/>
-                <CountryTable props={countries}/>
+            <div className={`font min-h-screen ${appTheme ? 'bg-dark-blue-dm' : 'bg-light-gray-lm'}`}>
+                <Header handleThemeUpdate={() => setAppTheme(theme => !theme)} darkTheme={appTheme}/>
+                <Search handleSearch={handleSearch} darkTheme={appTheme}/>
+                <Filter handleFilter={handleFilter} darkTheme={appTheme}/>
+                <CountryTable props={countries} darkTheme={appTheme}/>
             </div>
 
         </>
