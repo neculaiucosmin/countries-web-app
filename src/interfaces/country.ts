@@ -23,11 +23,4 @@ export interface Country {
     language: Languages[]
 }
 
-export enum Regions {
-    Africa,
-    America,
-    Asia,
-    Europe,
-    Oceania
-}
-
+export type DarkTheme = boolean;
