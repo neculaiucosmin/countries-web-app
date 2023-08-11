@@ -26,7 +26,7 @@ function App() {
     const [region, setRegion] = useState(mappedCountry)
     const [countries, setCountries] = useState(region.slice(0, 15))
 
-    const [appTheme, setAppTheme] = useState(false)
+    const [appTheme, setAppTheme] = useState(true)
 
     const handleSearch = (countryName: string) => {
         if (countryName.length > 0) {
