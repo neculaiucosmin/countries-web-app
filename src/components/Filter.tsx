@@ -12,7 +12,7 @@ const Filter: React.FC<{
     const [showRegion, setShowRegion] = useState(false)
 
     return(
-    <div className={`relative  rounded-lg  mx-5 mt-8 my-2 shadow w-1/2 py-3 font-nunito ${darkTheme? 'bg-c-blue-dm': 'bg-c-white'}`}>
+    <div className={`relative  rounded-lg  mx-5 mt-8 my-2 shadow w-1/2 py-3 max-w-xs mb-5 font-nunito ${darkTheme? 'bg-c-blue-dm': 'bg-c-white'}`}>
         <div className={`flex flex-row justify-between w-full pl-3 pr-3 ${darkTheme? 'bg-c-blue-dm': 'bg-c-white'}`} onClick={() => setShowRegion(!showRegion)}>
             <span className={`font-semibold cursor-pointer ${darkTheme? 'text-c-white' : 'text-dark-blue-wm'}`}>Filter by Region</span>
             <img src={Expand} alt="Expand"/>
