@@ -5,7 +5,11 @@ export default {
         "./src/**/*.{js,ts,jsx,tsx}",
     ],
     theme: {
-        extend: {},
+        extend: {
+            boxShadow:{
+                'full-shadow': ' 2px 2px 5px 2px rgb(0 0 0 / 0.15)',
+            }
+        },
         fontFamily: {
             'nunito': ['Nunito Sans']
         },
@@ -17,6 +21,7 @@ export default {
             'light-gray-lm': 'hsl(0, 0%, 98%)',
             'c-white': 'hsl(0, 0%, 100%)'
         },
+
     },
     plugins: [],
 }

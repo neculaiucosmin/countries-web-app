@@ -11,6 +11,7 @@ const CountryTable: React.FC<{ props: Country[] , darkTheme: DarkTheme}> = ({pro
                     key={index}
                     prop={item}
                     darkTheme={darkTheme}/>)}
+
         </div>
     )
 

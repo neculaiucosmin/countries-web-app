@@ -20,7 +20,8 @@ export interface Country {
     capital: string | undefined,
     domain: string[],
     currencies: Curencies[] | undefined,
-    language: Languages[]
+    language: Languages[],
+    border:string[] |undefined
 }
 
 export type DarkTheme = boolean;

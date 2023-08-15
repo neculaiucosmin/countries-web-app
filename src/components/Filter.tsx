@@ -1,4 +1,5 @@
 import Expand from "../assets/expand.svg"
+import ExpandLight from "../assets/expand-light.svg"
 import React, {useState} from "react";
 import {DarkTheme} from "../interfaces/country.ts";
 
@@ -15,7 +16,7 @@ const Filter: React.FC<{
     <div className={`relative  rounded-lg  mx-5 mt-8 my-2 shadow w-1/2 py-3 max-w-xs mb-5 font-nunito ${darkTheme? 'bg-c-blue-dm': 'bg-c-white'}`}>
         <div className={`flex flex-row justify-between w-full pl-3 pr-3 ${darkTheme? 'bg-c-blue-dm': 'bg-c-white'}`} onClick={() => setShowRegion(!showRegion)}>
             <span className={`font-semibold cursor-pointer ${darkTheme? 'text-c-white' : 'text-dark-blue-wm'}`}>Filter by Region</span>
-            <img src={Expand} alt="Expand"/>
+            <img src={darkTheme ? ExpandLight : Expand } alt="Expand"/>
         </div>
 
         {showRegion && (
